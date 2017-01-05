@@ -18,5 +18,14 @@ main = print (double $ myFunc True)
 --This also works:
 --main = print ("Hi" ++ myFunc False)
 --Output: 84
+
 --The following type errors:
 --main = print ("Hi" ++ myFunc True)
+
+{- This also type errors:
+hasEven : List Nat -> Bool
+hasEven [] = False
+hasEven (x :: xs) = if mod x 2 == 0 then True else hasEven xs
+
+main = print (double . myFunc $ hasEven [1,3,5,7,9,10])
+-}
