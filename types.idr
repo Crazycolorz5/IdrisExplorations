@@ -10,6 +10,13 @@ theAnswer = 42
 myFunc : (x : Bool) -> (if x then Nat else String)
 myFunc input = if' input theAnswer "The Answer"
 
+double : Nat -> Nat
+double x = 2*x
+
 main : IO ()
-main = print (myFunc True)
---Output: 42
+main = print (double $ myFunc True)
+--This also works:
+--main = print ("Hi" ++ myFunc False)
+--Output: 84
+--The following type errors:
+--main = print ("Hi" ++ myFunc True)
